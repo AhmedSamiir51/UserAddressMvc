@@ -82,3 +82,4 @@ C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserA
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.pdb
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.Migrations.identety.resources
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.csproj.GenerateResource.cache
+C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.csproj.AssemblyReference.cache

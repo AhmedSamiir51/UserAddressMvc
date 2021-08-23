@@ -51,10 +51,11 @@ namespace TaskUserAddress.Controllers
         {
             if (ModelState.IsValid)
             {
+                int ord_id = 0;
+                ord_id = db.User.Max(e => (int?)e.IdUser) ?? 0;
 
-                var lastid = db.User.Max(e=>e.IdUser);
                 var model = new User();
-                model.IdUser = lastid + 1;
+                model.IdUser = ord_id +1  ;
                 model.Email = user.Email;
                 model.UserName = user.UserName;
                 db.User.Add(model);
@@ -63,7 +64,7 @@ namespace TaskUserAddress.Controllers
                 for (int i = 0; i < 3; i++)
                 {
                     var address = new UserAddress();
-                    var lastidAddress = db.UserAddresses.Max(e => e.AddressId);
+                    var lastidAddress = db.UserAddresses.Max(e => (int?)e.AddressId) ?? 0;
                     address.AddressId = lastidAddress + 1;
                     address.IdUser = model.IdUser;
                     address.Address = user.Address[i];
