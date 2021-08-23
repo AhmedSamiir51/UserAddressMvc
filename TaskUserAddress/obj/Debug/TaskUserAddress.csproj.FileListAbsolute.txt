@@ -80,8 +80,5 @@ C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserA
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.dll
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.pdb
-C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.Migrations.classes.resources
+C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.Migrations.identety.resources
 C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.csproj.GenerateResource.cache
-C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.csproj.AssemblyReference.cache
-C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.Migrations.address.resources
-C:\Users\Lenovo\source\repos\TaskUserAddress\TaskUserAddress\obj\Debug\TaskUserAddress.Migrations.addresssss.resources

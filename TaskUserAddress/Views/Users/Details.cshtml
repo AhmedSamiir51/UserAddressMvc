@@ -30,12 +30,29 @@
         @foreach (var item in Model.UserAddresses)
         {
             <dt>
-               Address 
+                City
+            </dt>
+
+            <dd>
+                @item.City
+            </dd>
+
+            <dt>
+                Country
+            </dt>
+
+            <dd>
+                @item.Country
+            </dd>
+
+            <dt>
+                Address
             </dt>
 
             <dd>
                 @item.Address
             </dd>
+
         }
 
 

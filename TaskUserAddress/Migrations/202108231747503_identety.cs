@@ -3,7 +3,7 @@ namespace TaskUserAddress.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class classes : DbMigration
+    public partial class identety : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@ namespace TaskUserAddress.Migrations
                 "dbo.Users",
                 c => new
                     {
-                        IdUser = c.Int(nullable: false, identity: true),
+                        IdUser = c.Int(nullable: false),
                         UserName = c.String(),
                         Email = c.String(),
                     })
@@ -21,20 +21,22 @@ namespace TaskUserAddress.Migrations
                 "dbo.UserAddresses",
                 c => new
                     {
-                        AddressId = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
+                        AddressId = c.Int(nullable: false),
+                        IdUser = c.Int(nullable: false),
                         Address = c.String(),
+                        City = c.String(),
+                        Country = c.String(),
                     })
                 .PrimaryKey(t => t.AddressId)
-                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
+                .ForeignKey("dbo.Users", t => t.IdUser, cascadeDelete: true)
+                .Index(t => t.IdUser);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserAddresses", "UserId", "dbo.Users");
-            DropIndex("dbo.UserAddresses", new[] { "UserId" });
+            DropForeignKey("dbo.UserAddresses", "IdUser", "dbo.Users");
+            DropIndex("dbo.UserAddresses", new[] { "IdUser" });
             DropTable("dbo.UserAddresses");
             DropTable("dbo.Users");
         }

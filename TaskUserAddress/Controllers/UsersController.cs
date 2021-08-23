@@ -47,26 +47,32 @@ namespace TaskUserAddress.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(UserModel user)
+        public ActionResult Create(UserModel user )
         {
             if (ModelState.IsValid)
             {
 
+                var lastid = db.User.Max(e=>e.IdUser);
                 var model = new User();
+                model.IdUser = lastid + 1;
                 model.Email = user.Email;
                 model.UserName = user.UserName;
                 db.User.Add(model);
                 db.SaveChanges();
 
-
-                foreach (var item in user.Address)
+                for (int i = 0; i < 3; i++)
                 {
                     var address = new UserAddress();
-                    address.UserId = model.IdUser;
-                    address.Address = item;
+                    var lastidAddress = db.UserAddresses.Max(e => e.AddressId);
+                    address.AddressId = lastidAddress + 1;
+                    address.IdUser = model.IdUser;
+                    address.Address = user.Address[i];
+                    address.Country = user.Country[i];
+                    address.City = user.City[i];
                     db.UserAddresses.Add(address);
                     db.SaveChanges();
                 }
+                
                 return RedirectToAction("Index");
             }
 
@@ -94,7 +100,7 @@ namespace TaskUserAddress.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(User user,string[] Address)
+        public ActionResult Edit(User user,string[] Address, string[] City, string[] Country)
         {
             if (ModelState.IsValid)
             {
@@ -103,12 +109,14 @@ namespace TaskUserAddress.Controllers
                 model.UserName = user.UserName;
                 
                 db.SaveChanges();
-                var address = db.UserAddresses.Where(e => e.UserId == user.IdUser).ToList();
+                var address = db.UserAddresses.Where(e => e.IdUser == user.IdUser).ToList();
                 int i = 0;
                 foreach (var item in address)
                 {
                     item.Address = Address[i];
-                     db.SaveChanges();
+                    item.City = City[i];
+                    item.Country = Country[i];
+                    db.SaveChanges();
                     i++;
                 }
                 return RedirectToAction("Index");
@@ -139,7 +147,7 @@ namespace TaskUserAddress.Controllers
             User user = db.User.Find(id);
             db.User.Remove(user);
             db.SaveChanges();
-            var address = db.UserAddresses.Where(e => e.UserId == user.IdUser).ToList();
+            var address = db.UserAddresses.Where(e => e.IdUser == user.IdUser).ToList();
             foreach (var item in address)
             {
                 db.UserAddresses.Remove(item);

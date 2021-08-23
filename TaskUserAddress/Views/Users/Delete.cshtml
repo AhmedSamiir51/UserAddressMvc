@@ -27,9 +27,24 @@
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-         
-        @foreach (var item in Model.UserAddresses.Where(e => e.UserId == Model.IdUser).ToList())
+
+        @foreach (var item in Model.UserAddresses.Where(e => e.IdUser == Model.IdUser).ToList())
         {
+            <dt>
+                City
+            </dt>
+
+            <dd>
+                @item.City
+            </dd>
+
+            <dt>
+                Country
+            </dt>
+
+            <dd>
+                @item.Country
+            </dd>
             <dt>
                 Address
             </dt>
@@ -37,7 +52,8 @@
             <dd>
                 @item.Address
             </dd>
-           
+
+
         }
     </dl>
 

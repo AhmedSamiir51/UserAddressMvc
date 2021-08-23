@@ -133,19 +133,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108230315368_classes.cs" />
-    <Compile Include="Migrations\202108230315368_classes.Designer.cs">
-      <DependentUpon>202108230315368_classes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108231024462_address.cs" />
-    <Compile Include="Migrations\202108231024462_address.Designer.cs">
-      <DependentUpon>202108231024462_address.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108231032219_addresssss.cs" />
-    <Compile Include="Migrations\202108231032219_addresssss.Designer.cs">
-      <DependentUpon>202108231032219_addresssss.cs</DependentUpon>
+    <Compile Include="Migrations\202108231747503_identety.cs" />
+    <Compile Include="Migrations\202108231747503_identety.Designer.cs">
+      <DependentUpon>202108231747503_identety.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAddress.cs" />
@@ -211,14 +204,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108230315368_classes.resx">
-      <DependentUpon>202108230315368_classes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108231024462_address.resx">
-      <DependentUpon>202108231024462_address.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108231032219_addresssss.resx">
-      <DependentUpon>202108231032219_addresssss.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108231747503_identety.resx">
+      <DependentUpon>202108231747503_identety.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
